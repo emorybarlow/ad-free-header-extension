@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      width: 380px;
+      padding: 16px;
+      margin: 0;
+      background: #1e1e2e;
+      color: #cdd6f4;
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #cba6f7;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .header-row {
+      display: grid;
+      grid-template-columns: 38px 1fr 1fr;
+      gap: 6px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .col-labels {
+      display: grid;
+      grid-template-columns: 38px 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    .col-labels span {
+      font-size: 10px;
+      color: #6c7086;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .col-labels span:first-child { text-align: center; }
+    input[type="text"] {
+      width: 100%;
+      box-sizing: border-box;
+      background: #313244;
+      border: 1px solid #45475a;
+      border-radius: 6px;
+      color: #cdd6f4;
+      padding: 6px 8px;
+      font-size: 12px;
+      outline: none;
+      min-width: 0;
+    }
+    input[type="text"]:focus { border-color: #cba6f7; }
+    input[type="text"]::placeholder { color: #585b70; }
+    input[type="text"]:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+    }
+
+    .toggle {
+      position: relative;
+      width: 30px;
+      height: 18px;
+      margin: 0 auto;
+      display: block;
+    }
+    .toggle input { display: none; }
+    .slider {
+      position: absolute;
+      inset: 0;
+      background: #45475a;
+      border-radius: 18px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .slider::before {
+      content: "";
+      position: absolute;
+      width: 12px;
+      height: 12px;
+      left: 3px;
+      top: 3px;
+      background: #cdd6f4;
+      border-radius: 50%;
+      transition: transform 0.2s;
+    }
+    input:checked + .slider { background: #a6e3a1; }
+    input:checked + .slider::before { transform: translateX(12px); }
+
+    .divider {
+      border: none;
+      border-top: 1px solid #313244;
+      margin: 10px 0;
+    }
+    #status {
+      font-size: 11px;
+      color: #a6e3a1;
+      min-height: 16px;
+      text-align: center;
+    }
+    #status.error { color: #f38ba8; }
+  </style>
+</head>
+<body>
+  <h2>Headerline</h2>
+
+  <div class="col-labels">
+    <span>On</span>
+    <span>Header Name</span>
+    <span>Value</span>
+  </div>
+
+  <div id="rows"></div>
+
+  <hr class="divider">
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
