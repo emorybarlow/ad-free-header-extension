@@ -15,7 +15,7 @@ Lightweight Chrome extension for injecting custom HTTP request headers. Supports
 ## Installation
 
 ### From the Chrome Web Store
-*(Coming soon)*
+https://chromewebstore.google.com/detail/headerline/ljnkkcjbkkaaabbbkjfajlljkemfkgak?pli=1
 
 ### Manual / Developer Install
 1. Clone or download this repo
